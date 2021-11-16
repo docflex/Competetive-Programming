@@ -92,6 +92,7 @@ ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n
 // clang-format on
 void solveMyProblem(istream &cin, ostream &cout) {
     // Solve Here
+    cout << "hello" << el;
 }
 
 int32_t main() {
