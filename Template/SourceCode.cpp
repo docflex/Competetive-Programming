@@ -18,7 +18,6 @@
 */
 #include <bits/stdc++.h>
 using namespace std;
-using namespace chrono;
 
 // clang-format off
 // <----------------------- Macros Start Here ----------------------->
@@ -40,9 +39,11 @@ using namespace chrono;
 #define ss          second
 
 // Typedefs Here
-typedef long long ll;
-typedef unsigned long long ull;
+typedef long long int ll;
+typedef unsigned long long int ull;
 typedef long double lld;
+typedef vector <ll> vl;
+typedef vector <pair <ll, ll> > vll;
 
 // <----------------------- Macros End Here ----------------------->
 
@@ -72,24 +73,35 @@ template <class T> void _print(set<T> v) { cerr << "[ "; for (T i : v) { _print(
 template <class T> void _print(multiset<T> v) { cerr << "[ "; for (T i : v) { _print(i); cerr << " "; } cerr << "]"; }
 template <class T, class V> void _print(map<T, V> v) { cerr << "[ "; for (auto i : v) { _print(i); cerr << " "; } cerr << "]"; }
 
+// Operator overloads
+template<typename T1, typename T2> // cin >> pair<T1, T2>
+istream& operator>>(istream &istream, pair<T1, T2> &p) { return (istream >> p.first >> p.second); }
+template<typename T> // cin >> vector<T>
+istream& operator>>(istream &istream, vector<T> &v) { for (auto &it : v) cin >> it; return istream; }
+template<typename T1, typename T2> // cout << pair<T1, T2>
+ostream& operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second << el); }
+template<typename T> // cout << vector<T>
+ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << " "; return ostream; }
+ 
+
 // <----------------------- Debug Utils End Here ----------------------->
 
 // <----------------------- Predefined Goodies Start Here ----------------------->
 
 ll GCD(ll a, ll b) {if (b > a) {return GCD(b, a);} if (b == 0) {return a;} return GCD(b, a % b);}
+ll LCM(ll a, ll b) { return (a / GCD(a, b)) * b; }
 ll pwr(ll a, ll b, ll mod) {ll res = 1; while (b > 0) {if (b & 1)res = (res * a) % mod; a = (a * a) % mod; b = b >> 1;} return res;}
-void extGCD(ll a, ll b, ll*v) {if (b == 0) {v[0] = 1; v[1] = 0; v[2] = a; return ;} extGCD(b, a % b, v); ll x = v[1]; v[1] = v[0] - v[1] * (a / b); v[0] = x; return;} //pass an arry of size1 3
-ll mminv(ll a, ll b) {ll arr[3]; extGCD(a, b, arr); return arr[0];} //for non prime b
 ll mminvprime(ll a, ll b) {return pwr(a, b - 2, b);}
 ll modAdd(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
 ll modMul(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 ll modSub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
 ll modDiv(ll a, ll b, ll m) {a = a % m; b = b % m; return (modMul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
-ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n /= 2;} for (ll i = 3; i <= sqrt(n); i += 2) {if (n % i == 0) {while (n % i == 0)n /= i; number = (number / i * (i - 1));}} if (n > 1)number = (number / n * (n - 1)) ; return number;} //O(sqrt(N))
-
+bool isPrime(ll n) { if(n < 2) return false; for(ll k = 2; k * k <= n; k++) if(n % k == 0) return false; return true; }
+ 
 // <----------------------- Predefined Goodies End Here ----------------------->
 
 // clang-format on
+
 void solveMyProblem(istream &cin, ostream &cout) {
     // Solve Here
 }
@@ -109,7 +121,7 @@ int32_t main() {
     */
 
     ll t = 1;
-    cin >> t;
+    // cin >> t;
     for (ll test = 1; test <= t; test++) {
         // printf("Case #%lld: ", test);
         solveMyProblem(in, out);
@@ -121,6 +133,7 @@ int32_t main() {
 #ifndef ONLINE_JUDGE
     clock_t endClock = clock();
     double timeTaken = double(endClock - startClock) / double(CLOCKS_PER_SEC);
+    cout << fixed << setprecision(7);
     cout << "Time Taken: " << timeTaken << " Sec";
 #endif
     return 0;
