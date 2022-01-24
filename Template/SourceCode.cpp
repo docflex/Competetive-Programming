@@ -44,6 +44,7 @@ typedef unsigned long long int ull;
 typedef long double lld;
 typedef vector <ll> vl;
 typedef vector <pair <ll, ll> > vll;
+typedef pair <ll, ll> pll;
 
 // <----------------------- Macros End Here ----------------------->
 
