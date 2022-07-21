@@ -1,20 +1,20 @@
 /*
-    $$$$$$\              $$\     $$\
-    $$  __$$\             $$ |    $$ |
-    $$ /  $$ |$$\   $$\ $$$$$$\   $$$$$$$\   $$$$$$\   $$$$$$\        $$\
-    $$$$$$$$ |$$ |  $$ |\_$$  _|  $$  __$$\ $$  __$$\ $$  __$$\       \__|
-    $$  __$$ |$$ |  $$ |  $$ |    $$ |  $$ |$$ /  $$ |$$ |  \__|
-    $$ |  $$ |$$ |  $$ |  $$ |$$\ $$ |  $$ |$$ |  $$ |$$ |            $$\
-    $$ |  $$ |\$$$$$$  |  \$$$$  |$$ |  $$ |\$$$$$$  |$$ |            \__|
-    \__|  \__| \______/    \____/ \__|  \__| \______/ \__|
-    $$$$$$$\                      $$$$$$$$\ $$\
-    $$  __$$\                     $$  _____|$$ |
-    $$ |  $$ | $$$$$$\   $$$$$$$\ $$ |      $$ | $$$$$$\  $$\   $$\
-    $$ |  $$ |$$  __$$\ $$  _____|$$$$$\    $$ |$$  __$$\ \$$\ $$  |
-    $$ |  $$ |$$ /  $$ |$$ /      $$  __|   $$ |$$$$$$$$ | \$$$$  /
-    $$ |  $$ |$$ |  $$ |$$ |      $$ |      $$ |$$   ____| $$  $$<
-    $$$$$$$  |\$$$$$$  |\$$$$$$$\ $$ |      $$ |\$$$$$$$\ $$  /\$$\
-    \_______/  \______/  \_______|\__|      \__| \_______|\__/  \__|
+$$$$$$\              $$\     $$\
+$$  __$$\             $$ |    $$ |
+$$ /  $$ |$$\   $$\ $$$$$$\   $$$$$$$\   $$$$$$\   $$$$$$\        $$\
+$$$$$$$$ |$$ |  $$ |\_$$  _|  $$  __$$\ $$  __$$\ $$  __$$\       \__|
+$$  __$$ |$$ |  $$ |  $$ |    $$ |  $$ |$$ /  $$ |$$ |  \__|
+$$ |  $$ |$$ |  $$ |  $$ |$$\ $$ |  $$ |$$ |  $$ |$$ |            $$\
+$$ |  $$ |\$$$$$$  |  \$$$$  |$$ |  $$ |\$$$$$$  |$$ |            \__|
+\__|  \__| \______/    \____/ \__|  \__| \______/ \__|
+$$$$$$$\                      $$$$$$$$\ $$\
+$$  __$$\                     $$  _____|$$ |
+$$ |  $$ | $$$$$$\   $$$$$$$\ $$ |      $$ | $$$$$$\  $$\   $$\
+$$ |  $$ |$$  __$$\ $$  _____|$$$$$\    $$ |$$  __$$\ \$$\ $$  |
+$$ |  $$ |$$ /  $$ |$$ /      $$  __|   $$ |$$$$$$$$ | \$$$$  /
+$$ |  $$ |$$ |  $$ |$$ |      $$ |      $$ |$$   ____| $$  $$<
+$$$$$$$  |\$$$$$$  |\$$$$$$$\ $$ |      $$ |\$$$$$$$\ $$  /\$$\
+\_______/  \______/  \_______|\__|      \__| \_______|\__/  \__|
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -82,8 +82,7 @@ istream& operator>>(istream &istream, vector<T> &v) { for (auto &it : v) cin >> 
 template<typename T1, typename T2> // cout << pair<T1, T2>
 ostream& operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second << el); }
 template<typename T> // cout << vector<T>
-ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << " "; return ostream; }
- 
+ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << ""; return ostream; }
 
 // <----------------------- Debug Utils End Here ----------------------->
 
@@ -98,13 +97,14 @@ ll modMul(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a * b) % m) + m) % 
 ll modSub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
 ll modDiv(ll a, ll b, ll m) {a = a % m; b = b % m; return (modMul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
 bool isPrime(ll n) { if(n < 2) return false; for(ll k = 2; k * k <= n; k++) if(n % k == 0) return false; return true; }
- 
+
 // <----------------------- Predefined Goodies End Here ----------------------->
 
 // clang-format on
 
-void solveMyProblem(istream &cin, ostream &cout) {
+void solveMyProblem(istream &cin, ostream &cout, ll testCase) {
     // Solve Here
+    // cout << "Case #" << testCase << ": ";
 }
 
 int32_t main() {
@@ -122,10 +122,9 @@ int32_t main() {
     */
 
     ll t = 1;
-    // cin >> t;
+    cin >> t;
     for (ll test = 1; test <= t; test++) {
-        // printf("Case #%lld: ", test);
-        solveMyProblem(in, out);
+        solveMyProblem(in, out, test);
     }
 
     /*
