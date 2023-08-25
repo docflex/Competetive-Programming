@@ -45,6 +45,8 @@ typedef long double lld;
 typedef vector <ll> vl;
 typedef vector <pair <ll, ll> > vll;
 typedef pair <ll, ll> pll;
+typedef priority_queue<ll> priQueNorm;
+typedef priority_queue<ll, vector<ll>, greater<ll> > priQueVec;
 
 // <----------------------- Macros End Here ----------------------->
 
@@ -82,7 +84,8 @@ istream& operator>>(istream &istream, vector<T> &v) { for (auto &it : v) cin >> 
 template<typename T1, typename T2> // cout << pair<T1, T2>
 ostream& operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second << el); }
 template<typename T> // cout << vector<T>
-ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << ""; return ostream; }
+ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << " "; return ostream; }
+
 
 // <----------------------- Debug Utils End Here ----------------------->
 
@@ -104,6 +107,7 @@ bool isPrime(ll n) { if(n < 2) return false; for(ll k = 2; k * k <= n; k++) if(n
 
 void solveMyProblem(istream &cin, ostream &cout, ll testCase) {
     // Solve Here
+    // cout << fixed << setprecision(10);
     // cout << "Case #" << testCase << ": ";
 }
 
