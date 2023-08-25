@@ -2,6 +2,16 @@
   <img src="src/banner.jpg" alt="Competitive Programming Logo"/>
 </p>
 
+<p align="center">
+  <a href="https://in.linkedin.com/in/r0m" target="_blank">
+    <img alt="made-by-rehber" src="https://img.shields.io/badge/MADE%20BY-Rehber-blue?style=for-the-badge" />
+  </a>
+  <a href="https://choosealicense.com/licenses/mit/" target="_blank">
+    <img alt="license" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+  </a>
+
+</p>
+
 # ✨ Competitive Programming Template ✨
 
 Hello fellow programmer! Welcome to the **Awesome Competitive Programming Template** GitHub repository. 🚀 This repository is your go-to destination for a comprehensive and handy competitive programming template written in C++. Whether you're a seasoned coder or just getting started, this template is designed to supercharge your problem-solving skills! 🏆
